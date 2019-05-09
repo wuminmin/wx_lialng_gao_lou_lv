@@ -1,0 +1,23 @@
+<view class="page">
+  <view class="page__hd">
+    <view class="page__title">快乐抽奖888</view>
+    <view class="page__desc red-color">{{lei_xing}}</view>
+    <view class="page__desc red-color">{{ti_shi}}</view>
+    
+  </view>
+  <view class="page__bd page__bd_spacing">
+    <block wx:for="{{form_list}}" wx:for-item="form" wx:key="form_list">
+      <form id="{{form.name}}" bindsubmit="formSubmit" report-submit="true">
+        <button class="weun-btn" form-type="submit">{{form.name}}</button>
+      </form>
+    </block>
+     <view class="page__desc">{{flex_des}}</view>
+    <block wx:for="{{flex_list}}" wx:for-item="flex" wx:key="flex_list">
+      <view class="weui-flex">
+        <view class="weui-flex__item">
+          <view class="placeholder">{{flex.name}}</view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

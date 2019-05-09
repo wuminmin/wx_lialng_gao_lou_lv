@@ -1,0 +1,68 @@
+<view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
+  <view class="page__hd">
+    <view class="page__title">用户注册</view>
+    <view class="page__desc">请注册您的资料</view>
+  </view>
+  <view class="page__bd">
+    <view class="weui-toptips weui-toptips_warn" wx:if="{{showTopTips}}">错误提示</view>
+    <view class="weui-cells__title">个人信息</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">姓名</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" placeholder="请输入姓名" />
+        </view>
+      </view>
+    </view>
+    <view class="weui-cells__title">部门信息</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_select">
+        <view class="weui-cell__hd weui-cell__hd_in-select-after">
+          <view class="weui-label">二级部门</view>
+        </view>
+        <view class="weui-cell__bd">
+          <picker bindchange="bindCountryChange" value="{{countryIndex}}" range="{{countries}}">
+            <view class="weui-select weui-select_in-select-after">{{countries[countryIndex]}}</view>
+          </picker>
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_select">
+        <view class="weui-cell__hd weui-cell__hd_in-select-after">
+          <view class="weui-label">三级部门</view>
+        </view>
+        <view class="weui-cell__bd">
+          <picker bindchange="bindCountryChange2" value="{{countryIndex2}}" range="{{countries2}}">
+            <view class="weui-select weui-select_in-select-after">{{countries2[countryIndex2]}}</view>
+          </picker>
+        </view>
+      </view>
+            <view class="weui-cell weui-cell_select">
+        <view class="weui-cell__hd weui-cell__hd_in-select-after">
+          <view class="weui-label">四级部门</view>
+        </view>
+        <view class="weui-cell__bd">
+          <picker bindchange="bindCountryChange3" value="{{countryIndex2}}" range="{{countries2}}">
+            <view class="weui-select weui-select_in-select-after">{{countries3[countryIndex3]}}</view>
+          </picker>
+        </view>
+      </view>
+    </view>
+    <checkbox-group bindchange="bindAgreeChange">
+      <label class="weui-agree" for="weuiAgree">
+        <view class="weui-agree__text">
+          <checkbox class="weui-agree__checkbox" id="weuiAgree" value="agree" checked="{{isAgree}}" />
+          <view class="weui-agree__checkbox-icon">
+            <icon class="weui-agree__checkbox-icon-check" type="success_no_circle" size="9" wx:if="{{isAgree}}"></icon>
+          </view>
+          阅读并同意
+          <navigator url="" class="weui-agree__link">《相关条款》</navigator>
+        </view>
+      </label>
+    </checkbox-group>
+    <view class="weui-btn-area">
+      <button class="weui-btn" type="primary" bindtap="showTopTips">确定</button>
+    </view>
+  </view>
+</view>
